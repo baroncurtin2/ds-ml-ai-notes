@@ -6,6 +6,11 @@ use_math: true
 
 # Introduction
 
+1. **Inputs**: set of variables that are measrured or preset. Also called *predictors*, *features* (in pattern recognition), and *independent variables*
+
+2. **Outputs**: set of variables that are influenced by the *inputs*. Also called *responses* or *dependent variables*
+
+3. **Supervised Learning**: an exercise where the goal is to use *inputs* to predict the value of the *outputs*
 
 
 
