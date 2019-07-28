@@ -6,7 +6,8 @@ use_math: true
 
 # Introduction
 
-1. **Inputs**: set of variables that are measrured or preset. Also called *predictors*, *features* (in pattern recognition), and *independent variables*
+1. **Inputs**
+: set of variables that are measrured or preset. Also called *predictors*, *features* (in pattern recognition), and *independent variables*
 
 2. **Outputs**: set of variables that are influenced by the *inputs*. Also called *responses* or *dependent variables*
 
@@ -25,8 +26,9 @@ use_math: true
       - Dummy variables are used when there are mor than 2 categories
   c. Ordered Categorical: there is an ordering between the values but not metric notion is appropriate (the difference between two variables may not be the same as the difference between the next two set of variables i.e. small-medium and medium-large)
 
-2. Prediction Taskes
+2. Prediction Tasks
   
+
   a. **Regression**: predict quantitative outputs
   b. **Classification**: predict qualitative outputs
 
