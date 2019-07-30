@@ -186,7 +186,7 @@ $$f(x) = E(Y|X = x)$$
 
 - Both *k*-nearest neighbors and least sqaures approximate conditional expectations by averages but:
   - Least squares assumes $f(x)$ is well approximated  by a globally linear function
-  - *k*-nearest neighbors assumes (f) is well approximated by a locally constant function
+  - *k*-nearest neighbors assumes (f) is well approximated by a locally constant function  d
 
 - Additive models assume that
 
