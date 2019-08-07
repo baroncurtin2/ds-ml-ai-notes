@@ -7,4 +7,4 @@ use_math: true
 
 [1 - Introduction](./introduction)
 
-[2 - Linear Algebra](./linear-algebra)
+[2 - Linear Algebra](./02-linear-algebra)
