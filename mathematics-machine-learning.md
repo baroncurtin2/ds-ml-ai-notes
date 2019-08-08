@@ -3,8 +3,8 @@ layout: default
 use_math: true
 ---
 
-[Reference](./reference)
+[Reference](./00-reference)
 
-[1 - Introduction](./introduction)
+[1 - Introduction](./01-introduction)
 
 [2 - Linear Algebra](./02-linear-algebra)

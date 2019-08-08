@@ -4,7 +4,8 @@ use_math: true
 ---
 
 # Linear Algebra
-
+- *Algebra* is a common approach to formalizing intuitive concepts by constructing a set of objects (symbols) and a set of rules to manipulate these objects
+- *Linear Algebra* is the study of vectors and certain rules to manipulate vectors
 
 ## Systems of Linear Equations
 
