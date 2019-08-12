@@ -36,15 +36,15 @@ $$x_1 \left[\begin{array}{ccc}a_{11} \\ \vdots \\a_{m1}\end{array}\right] + x_2 
  - Can also represent linear functions (linear mappings)
  - By convention (1, n)-matrices are called rows
  - (m, 1)-matrices are called columns
- - $\mathbb{R}^{m * n}$ is the set of all real-valued (*m, n*)-matrices
+ - $\mathbb{R}^{m \times n}$ is the set of all real-valued (*m, n*)-matrices
 
 ### Matrix Addition and Multiplication
 
-- The sum of two matrices $A \in \mathbb{R}^{m * n}$, $B \in \mathbb{R}^{m * n}$ is defined as the element-wise sum
+- The sum of two matrices $A \in \mathbb{R}^{m \times n}$, $B \in \mathbb{R}^{m \times n}$ is defined as the element-wise sum
 
-$$ A + B := \left[\begin{array}{ccc} a_{11} + b_{11} & ... & a_{1n} + b_{1n} \\ \vdots & & \vdots \\ a_{m1} + b_{m1} & ... & a_{mn} + b_{mn}\end{array}\right] \in \mathbb{R}^{m * n}$$
+$$ A + B := \left[\begin{array}{ccc} a_{11} + b_{11} & ... & a_{1n} + b_{1n} \\ \vdots & & \vdots \\ a_{m1} + b_{m1} & ... & a_{mn} + b_{mn}\end{array}\right] \in \mathbb{R}^{m \times n}$$
 
-- The product of two matrices $A \in \mathbb{R}^{m * n}$, $B \in \mathbb{R}^{n * k}$ the elements $c_{ij}$ of the product $C = AB \in \mathbb{R}^{m * k}$ are defined as
+- The product of two matrices $A \in \mathbb{R}^{m \times n}$, $B \in \mathbb{R}^{n * k}$ the elements $c_{ij}$ of the product $C = AB \in \mathbb{R}^{m * k}$ are defined as
     - To compute element $c_{ij}$, we multiply the elements of the *i*th row of **A** with the *j*th column of **B** and then sum them up
     - This is called the *dot product*
     - Matrix multiplication can only occur if the column dimensions of the left matrix match the row dimensions of the right matrix
@@ -58,14 +58,39 @@ $$ I_n := \left[\begin{array}{ccc} 1 & 0 & ... & 0 & ... & 0 \\ 0 & 1 & ... & 0 
 #### Properties of Matrices
 
 - *Associativity*
-    - $\forall A \in \mathbb{R}^{m \times x}, B \in \mathbb{R}^{n \times p}, C \in \mathbb{R}^{p \times q}: (AB)C = A(BC)$
-    - For all A in Real Number space (m * n), B in Real Number space (n * p), C in Real Number space (p * q): $(AB)C = A(BC)$
-
+    - $\forall A \in \mathbb{R}^{m \times n}, B \in \mathbb{R}^{n \times p}, C \in \mathbb{R}^{p \times q}: (AB)C = A(BC)$
+    - For all A in Real Number space (m \times n), B in Real Number space (n \times p), C in Real Number space (p * q): $(AB)C = A(BC)$
+- *Distributivity*
+    - $\forall A, B \in \mathbb{R}^{m \times n}, C, D \in \mathbb{R}^{n \times p}: (A + B)C = AC + BC$
+    - For all A, B in Real Number space (m \times n), C, D in Real Number space (n \times p): (A + B)C = AC + BC
+- *Identity Multiplication*
+    - $\forall A \in \mathbb{R}^{m \times n}: I_mA = AI_n = A$
+        - $I_m \ne I_n$ for (m \ne n)
+    - For all A in Real Number space (m \times n): (I_mA = AI_n = A)
 
 
 ### Inverse and Transpose
 
-
+- *Inverse*
+    - The *inverse* is denoted by $A^{-1}$
+    - $AB = I_n = BA$
+        - ***B*** is the inverse of ***A***
+    - Not every matrix $A$ possesses an inverse $A^{-1}$
+    - If an inverse exists, the matrix is called *regular/invertible/nonsingular*
+    - If no inverse exists, the matrix is called *singular/noninvertible*
+- *Transpose*
+    - The *transpose* is denoted as $A^T$
+    - For $A \in \mathbb{R}^{m \times n}$, the matrix $B \in \mathbb{R}^{n \times m}$ with $b_{ij} = a_{ji}$ is called the *transpose* of A
+        - $B = A^T$
+- Properties of Inverses and Traponses
+    - Inverses
+        - $AA^{-1} = I = A^{-1}A$
+        - $(AB)^{-1} = B^{-1}A^{-1}
+        - $(A + B)^{-1} \ne A^{-1} + B^{-1}$
+    - Transposes
+        - $(A^T)^T = A$
+        - $(A + B)^T = A^T + B^T$
+        - $(AB)^T = B^TA^T$
 
 ### Multiplication by a Scalar
 
