@@ -164,75 +164,166 @@ $$\textbf{Ax} = \sum_i \textit{x}_i \textbf{A}_{:,i}$$
     - Norms are any functions *f* that satisfy the following proprties:
         - $f(x) = 0 \Rightarrow \textit{x} = 0$
         - $f(x + y) \le f(x) + f(y)$ (the triangle inequality)
-        - $\forall\alpha \in \mathbb{R}, f(\alphax) = |\alpha|f(x)$
+        - $\forall\alpha \in \mathbb{R}, f(\alpha x) = \|\alpha\|f(x)$
 
-**Euclidean Norm**
+- **Euclidean Norm**
 : This is the $L^2$ norm which is the Euclidean distance from the origin to the point identified by $\textit{x}$
+    - The size of a vector can be measured using $\textit{x}^Tx$
+    - The squared $L^2$ norm is more convenient to work with mathematically and computationally because each derivative of the squared $L^2$ norm with respect to each element of $x$ depends only on the corresponding element of $x$, while all the derivatives of the $L^2$ norm depend on the entire vector
 
-**Max Norm**
-:
+- The $L^1$ norm is used when it is important to discriminate between elements that are exactly zero and elements that are small but nonzero
+    - The $L^1$ norm grows at the same rate in all locations but retains mathematical simplicity
 
-**Frobenius Norm**
-:
+    $$||\textbf{x}||_1 = \sum_i|x_i|$$
+
+- **Max Norm**
+: The $L^\infty$ simplifies to the absolute value of the element with the largest magnitude in the vector
+
+    $$||\textbf{x}||_\infty = \max_i |x_i|$$
+
+- **Frobenius Norm**
+: The most common way to measure the size of a matrix
+
+    $$ ||A ||_F = \sqrt{\sum_{i,j} A^2_{i,j}} $$
+
+    - This is analogous to the $L^2$ norm of a vector
+
+- The dot product of two vectors can be rewritten in terms of norms:
+
+$$ x^Ty = ||x||_2 ||y||_2 \cos \theta $$
 
 ## Special Kinds of Matrices and Vectors
 
-**Diagonal Matrices**
-:
+- **Diagonal Matrices**
+: Consist mostly of zeros and have nonzero entries only along the main diagonal
+    - Formally, a matrix $\textbf{D}$ is diagonal if and only if $\textit{D}_{i,j} = 0$ for all $i \ne j$
+    - Not all diagonal matrices need to be square but rectangular diagonal matrices do not have inverses
 
-**Symmetric Matrix**
-:
+- **Symmetric Matrix**
+: Any matrix that is equal to its own transpose
+    - $\textbf{A} = \textbf{A}^T$
 
-**Unit Vector**
-:
+- **Unit Vector**
+: A vector with a unit norm
+    - $\|\|x\|\|_{2} = 1$
 
 **Unit Norm**
 :
 
-**Orthogonal Vectors**
-:
+- **Orthogonal Vectors**
+    - A vector $\textbf{x}$ and vector $\textbf{y}$ are orthogonal to each other if $x^Ty = 0$
+    - If both vectors have a nonzero norm, this means that they are at a 90 degree angle to each other
 
-**Orthonormal Vectors**
-:
+- **Orthonormal Vectors**
+: Vectors that are not only orthogonal but also have unit norms
 
-**Orthogonal Matrix**
-:
+- **Orthogonal Matrix**
+: A square matrix whose rows are mutually orthonormal and whose columns are mutually orthonormal
+    - $\textbf{A}^T\textbf{A} = \textbf{AA}^T = \textbf{I}$ 
 
 ## Eigendecomposition
 
-**Eigendecomposition**
-:
+- **Eigendecomposition**
+: The process of decomposing a matrix into a set of eigenvectors and eigenvalues
+    - Given by $\textbf{A} = \textbf{V}\text{diag}\(\lambda\)\textbf{V}^{-1}$
 
-**Eigenvector**
-:
+- **Eigenvector**
+: A nonzero vector $\textbf{v}$ such that when you multiply it by a matrix, the matrix is only altered by the scale of $\textbf{v}$
+    - $\textbf{Av} = \lambda\textbf{v}$
+    - The scalar $\lambda$ is known as the eigenvalue corresponding to the eigenvector
 
-**Eigenvalue**
-:
+- **Eigenvalue**
+: The scalar that is the eigenvalue of the corresponding eigenvector
 
-**Decompose**
-:
+- **Decompose**
+: Split matrices into their respective eigenvalues and eigenvectors
+
+- Every real symmetric matrix can be decomposed into an expression using only real-valued eigenvectors and eigenvalues: $\textbf{A} = Q \Lambda Q^T$
+    - **Q** is an orthogonal matrix composed of eigenvectors of A
+    - $\Lambda$ is a diagonal matrix
+
+- The eigendecomposition of a matrix tells us:
+    - The matrix is singular if and only if any of the eigenvalues are zero
+
+- **Positive Definite**
+: A matrix whose eigenvalues are all positive
+
+- **Positive Semidefinite**
+: A matrix whose eigenvalues are all positive or zero
+    - Guarantee that $\forall x, x^T\textbf{A}x \ge 0$
+
+- **Negative Definite**
+: A matrix whose eigenvalues are all negative
+
+- **Negative Semidefinite**
+: A matrix whose eigenvalues are all negative or zero
+    - Guarantee that $x^T\textbf{A}x = 0 \Rightarrow x = 0$
 
 ## Singular Value Decomposition
 
-**Singular Value Decomposition**
-:
-
-**Singular Vectors**
-:
+**Singular Value Decomposition (SVD)**
+: Provides a way to factorize a matrix into singular vectors and singular values
+    - SVD provides the same information eigendecomposition revealed but is more generally applicable
+    - Written as: $\textbf{A} = \textbf{UDV}^T$
+        - $\textbf{U}$ and $\textbf{V}$ are both orthogonal matrices
+        - Matrix $\textbf{D}$ is a diagonal matrix but not necessarily square
 
 **Singular Values**
-:
+: The elements along the diagonal of matrix $\textbf{D}$
 
 **Left-Singular Vectors**
-:
+: The columns of matrix $\textbf{U}$
 
 **Right-Singular Vectors**
-:
+: The columns of matrix $\textbf{V}$
+
+- The singular value decomposition of ***A*** can be interpreted in terms of the eigendecomposition of functions of ***A***
+    - The left-singular vectors of ***A*** are the eigenvectors of $\textbf{AA}^T$
+    - The right-singular vectors of ***A*** are the eigenvectors of $\textbf{A}^T\textbf{A}$
 
 ## The Moore-Penrose Pseudoinverse
 
+- Matrix inversion is not defined for matrices that are not square
+- The **Moore-Penrose pseudoinverse** can be used in cases when:
+    - Matrix ***A** is taller than it is wide, hence it is possible for the equation $\textbf{x = By}$
+    - Matrix ***A*** is wider than it is tall, hence there could be multiple possible solutions for the equation $\textbf{x = By}$
+- The pseudoinverse of ***A*** is defined as a matrix:
+
+$$\textbf{A}^+ = \lim_{\alpha \to 0} (\textbf{A}^T\textbf{A} + \alpha \textbf{I})^{-1}\textbf{A}^T$$
+
+- Practical algorithms for computing the pseudoinverse are based on:
+
+$$\textbf{A}^+ = \textbf{VD}^+\textbf{U}^T$$
+
+- $\textbf{U, D, V}$ are the singular value decomposition of $\textbf{A}$ and the pseudoinverse of $\textbf{D}^+$ of diagonal matrix $\textbf{D}$ is obtained by taking the receiprocal of its nonzero elements then taking the transpose of the resulting matrix
+
 ## The Trace Operator
+
+- Gives the sum of all the diagonal entries of a matrix
+
+$$Tr(\textbf{A}) = \sum_i \textbf{A}_{i,j}$$
 
 ## The Determinant
 
+- **Determinant**
+: A function that maps matrices to real scalars and is equal to the product of all the eigenvalues of the matrix
+    - If the determinant is 0, then space is contracted completely along at least one dimension causing it to lose all its volume
+    - If the determinant is 1, then the transformation preserves volume
+
 ## Example: Principal Components Analysis (PCA)
+
+- PCA is defined by our choice of the decoding function
+- We will want to find some encoding function the produces the code for an input, $f(x) = c$ and a decoding function that produces the reconstructed input given its code $x \approx g(f(x))$
+- The first thing that needs to be done in PCA is to figure out how to generate the optimal code point $c^*$ for each input point $x$
+    - One way to do this is to minimize the distance between the input point $x$ and its reconstruction $g(c^*)$
+    - We can measure the distance using the $L^2$ norm
+
+    $$c^* = \text{arg}_c\text{min}||x - g(c)||_2$$
+
+    - We can switch to the squared $L^2$ norm because both are minimized by the same value of $c$
+
+    $$c^* = \text{arg}_c\text{min}||x - g(c)||^2_2$$
+
+    - The function being minimized simplifies to
+
+    $$(x - g(c))^T(x - g(c))$$
