@@ -117,29 +117,29 @@ use_math: true
 - It is only possible for a system of equations to have no solutions, infitely many solutions, or one solution for every value of $\textbf{b}$
 - If both $\textbf{x}$ and $\textbf{y}$ are solutions then $ \textbf{z} = \alpha\textbf{x} + (1 - \alpha)\textbf{y}$
 
-**Origin**
+- **Origin**
 : The point specified by the vector of all zeros
 
 - To analyze how many solutions the equation has, the columns of $\textbf{A}$ can be thought of as different directions we can travel in from the origin, then determine how many ways there are of reach $\textbf{b}$. Each element of $\textbf{x}$ specifies how far we should travel in each of these directions with $\textit{x}_i$ specifying how far to move in the direction of column *i*
 
 $$\textbf{Ax} = \sum_i \textit{x}_i \textbf{A}_{:,i}$$
 
-**Linear Combination**
+- **Linear Combination**
 : Some set of vectors $\{v^{(1)},...,v^{(n)}}$ given by multiplying each vector $\textbf{v}^{(i)}$ by a corresponding scalar coefficient and adding the results
     
     $$\sum_i\textit{c}_i\textbf{v}^{(i)}$$
 
-**Span**
+- **Span**
 : The set of all points obtainable by linear combination of the original vectors
 
-**Column Space (Range)**
+- **Column Space (Range)**
 : Testing whether $\textbf{b}$ is in the span of columns of $\textbf{A}$
     - In order for the system $\textbf{Ax = b}$ to have a solution for all values of $\textbf{b} \in \mathbb{R}^m$, it is required that that column space of $\textbf{A}$ be all of $\mathbb{R}^m$
 
-**Linear Dependence**
+- **Linear Dependence**
 : When the column space is just a line and fails to encompass all of $\mathb{R}^2$ even when there are two columns
 
-**Linearly Independent**
+- **Linearly Independent**
 : When no vector in the set is a linear combination of the other vectors
 
 - For $\textbf{Ax = b}$ to have a solution for every value of $\textbf{b}$, the column space of the matrix must contain at least one set of *m* linearly independent columns
@@ -148,16 +148,26 @@ $$\textbf{Ax} = \sum_i \textit{x}_i \textbf{A}_{:,i}$$
 **Square Matrix**
 :
 
-**Singular**
+- **Singular**
 : A square matrix with linearly independent columns
 
 ## Norms
 
-**Norm**
-:
+- **Norm**
+: A function used to measure the size of vectors
+    - Formally, for $p \in \mathbb{R}, p \ge 1$, the $\textit{L}^p$ norm is given by : 
+
+    $$||\textbf{x}|| = \left(\sum_i|x_i|^p\right)^{\frac{1}{p}}$$
+
+    - Norms are functions mapping vectors to non-negative values
+    - The norm of a vector $\textit{x}$ measures the distance from the origin to the point $\textit{x}$
+    - Norms are any functions *f* that satisfy the following proprties:
+        - $f(x) = 0 \Rightarrow \textit{x} = 0$
+        - $f(x + y) \le f(x) + f(y)$ (the triangle inequality)
+        - $\forall\alpha \in \mathbb{R}, f(\alphax) = |\alpha|f(x)$
 
 **Euclidean Norm**
-:
+: This is the $L^2$ norm which is the Euclidean distance from the origin to the point identified by $\textit{x}$
 
 **Max Norm**
 :
