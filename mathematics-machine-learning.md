@@ -8,3 +8,5 @@ use_math: true
 [1 - Introduction](./01-introduction)
 
 [2 - Linear Algebra](./02-linear-algebra)
+
+[3 - Probability](./03-probability)
