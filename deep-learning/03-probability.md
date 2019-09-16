@@ -338,4 +338,3 @@ use_math: true
 
 - *Description*
 : Being directed or undirected is not a property of a probability distribution; it is a property of a particular description of a probability distribution, but any probability distribution may be described in both ways
-

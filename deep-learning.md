@@ -10,3 +10,5 @@ use_math: true
 [2 - Linear Algebra](./02-linear_algebra)
 
 [3 - Probability](./03-probability)
+
+[4 - Numerical Computation](./04-numerical_computation)
