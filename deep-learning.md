@@ -12,3 +12,5 @@ use_math: true
 [3 - Probability](./03-probability)
 
 [4 - Numerical Computation](./04-numerical_computation)
+
+[5 - Machine Learning Basics](./05-ml_basics)
